@@ -10,5 +10,12 @@ The suggested entities and fields are listing in [this google sheet](https://doc
 
 If you have questions, want to understand how a particular data type fits in this model please ask over email [metadata-wg@humancellatlas.org](mailto:metadata-wg@humancellatlas.org) or the slack channel #hca-metadata. Providing example data with your query is always a great idea.
 
+## Entity diagrams
+
+![alt text](https://github.com/HumanCellAtlas/metadata-standards/blob/master/HCA%20General%20Metadata%20entities%20v3.jpg "General Entities")
+
+![alt text](https://github.com/HumanCellAtlas/metadata-standards/blob/master/DropSeq%20Metadata%20entities%20v3.jpg "DropSeq Entities")
+
+
 
 
