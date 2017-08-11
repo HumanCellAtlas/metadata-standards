@@ -1,0 +1,6 @@
+{
+  "description": "Validation rules for HCA assay metadata. Rules are divided into one group that is applied to all assays, and additional groups based on the assay type",
+  "name": "HCA assay metadata rules",
+  "further_details_iri": "https://github.com/HumanCellAtlas/metadata-standards",
+  "rule_groups": []
+}
