@@ -1,4 +1,4 @@
-# Geting connected to HCA metadata group
+# Getting connected to HCA metadata group
 You can find details on getting connected to the Data Coordination Platform in general and the different email lists and slack channels specifically on the [HCA general wiki](https://github.com/HumanCellAtlas/wiki/wiki)
 
 If you aren't sure where to go, email or slack message Laura Clarke at EBI 
