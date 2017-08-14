@@ -23,11 +23,11 @@
 					"description": "The molecule being assayed",
 					"type": "ontology_text",
 					"valid_terms": [
-            {
-              "ontology_name": "",
-              "term_iri": "",
-              "allow_descendants": false
-            }
+						{
+							"ontology_name": "",
+							"term_iri": "",
+							"allow_descendants": false
+						}
 					]
 				},
 				{
@@ -58,14 +58,14 @@
 					"mandatory": "optional",
 					"name": "prep",
 					"description": "DNA sequencing library preparation kit",
-          "type": "ontology_text",
-          "valid_terms": [
-            {
-              "ontology_name": "",
-              "term_iri": "",
-              "allow_descendants": false
-            }
-          ]
+					"type": "ontology_text",
+					"valid_terms": [
+						{
+							"ontology_name": "",
+							"term_iri": "",
+							"allow_descendants": false
+						}
+					]
 				}
 			]
 		},
