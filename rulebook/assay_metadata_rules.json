@@ -21,11 +21,13 @@
 					"mandatory": "mandatory",
 					"name": "molecule",
 					"description": "The molecule being assayed",
-					"type": "text",
-					"valid_values": [
-						"genomic DNA",
-						"total RNA",
-						"protein"
+					"type": "ontology_text",
+					"valid_terms": [
+            {
+              "ontology_name": "",
+              "term_iri": "",
+              "allow_descendants": false
+            }
 					]
 				},
 				{
@@ -40,7 +42,53 @@
 							"allow_descendants": false
 						}
 					]
+				},
+				{
+					"mandatory": "mandatory",
+					"name": "paired ends",
+					"description": "Was a paired end sequencing strategy used?",
+					"type": "text",
+					"valid_values": [
+						"yes",
+						"no",
+						"index1_reads2"
+					]
+				},
+				{
+					"mandatory": "optional",
+					"name": "prep",
+					"description": "DNA sequencing library preparation kit",
+          "type": "ontology_text",
+          "valid_terms": [
+            {
+              "ontology_name": "",
+              "term_iri": "",
+              "allow_descendants": false
+            }
+          ]
 				}
+			]
+		},
+		{
+			"name": "umi_barcodes",
+			"rules": [
+				{
+					"mandatory": "mandatory",
+					"name": "umi barcode offset",
+					"description": "Offset in sequence of unique molecular identifier (UMI) barcode - 0 for beginning of sequence",
+					"type": "positive integer"
+				},
+				{
+					"mandatory": "mandatory",
+					"name": "umi barcode size",
+					"description": "Size  of UMI barcode - 0 for no barcode",
+					"type": "positive integer"
+				}
+			]
+		},
+		{
+			"name": "lanes",
+			"rules": [
 			]
 		},
 		{
