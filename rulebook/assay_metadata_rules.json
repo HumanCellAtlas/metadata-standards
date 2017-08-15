@@ -91,19 +91,19 @@
 			]
 		},
 		{
-      "condition": {
-        "attribute_value_match": {
-          "assay type": [
-            "seq"
-          ],
+			"condition": {
+				"attribute_value_match": {
+					"assay type": [
+						"seq"
+					],
 					"assay type": [
 						"RNA"
 					],
 					"assay type": [
 						"single_cell"
 					]
-        }
-      },
+				}
+			},
 			"name": "umi_barcodes",
 			"rules": [
 				{
@@ -121,16 +121,16 @@
 			]
 		},
 		{
-      "condition": {
-        "attribute_value_match": {
-          "assay type": [
-            "seq"
-          ],
+			"condition": {
+				"attribute_value_match": {
+					"assay type": [
+						"seq"
+					],
 					"machine type": [
 
 					]
-        }
-      },
+				}
+			},
 			"name": "lanes",
 			"rules": [
 				{
@@ -149,54 +149,54 @@
 					"description": "Read _1 in a paired end sequencing assay",
 					"type": "file name"
 				},
-        {
-          "condition": {
-            "attribute_value_match": {
-              "paired ends": [
-                "yes"
-              ],
-              "read1": [
-                true
-              ]
-            }
-          }
-          "mandatory": "mandatory",
-          "name": "read2",
-          "description": "Read _2 in a paired end sequencing assay",
-          "type": "file name"
-        },
-        {
-          "condition": {
-            "attribute_value_match": {
-              "paired ends": [
-                "index1_reads2"
-              ],
-              "reads": [
-                true
-              ]
-            }
-          }
-          "mandatory": "mandatory",
-          "name": "index",
-          "description": "File containing index reads in an index and read pair",
-          "type": "file name"
-        },
-        {
-          "condition": {
-            "attribute_value_match": {
-              "paired ends": [
-                "yes"
-              ],
-              "index": [
-                true
-              ]
-            }
-          }
-          "mandatory": "mandatory",
-          "name": "reads",
-          "description": "File containing reads in an index and read pair",
-          "type": "file name"
-        },
+				{
+					"condition": {
+						"attribute_value_match": {
+							"paired ends": [
+								"yes"
+							],
+							"read1": [
+								true
+							]
+						}
+					}
+					"mandatory": "mandatory",
+					"name": "read2",
+					"description": "Read _2 in a paired end sequencing assay",
+					"type": "file name"
+				},
+				{
+					"condition": {
+						"attribute_value_match": {
+							"paired ends": [
+								"index1_reads2"
+							],
+							"reads": [
+								true
+							]
+						}
+					}
+					"mandatory": "mandatory",
+					"name": "index",
+					"description": "File containing index reads in an index and read pair",
+					"type": "file name"
+				},
+				{
+					"condition": {
+						"attribute_value_match": {
+							"paired ends": [
+								"yes"
+							],
+							"index": [
+								true
+							]
+						}
+					}
+					"mandatory": "mandatory",
+					"name": "reads",
+					"description": "File containing reads in an index and read pair",
+					"type": "file name"
+				},
 				{
 					"mandatory": "mandatory",
 					"name": "lane ID",
@@ -206,25 +206,25 @@
 			]
 		},
 		{
-      "condition": {
-        "attribute_value_match": {
-          "assay type": [
-            "single_cell"
-          ]
-        }
-      },
+			"condition": {
+				"attribute_value_match": {
+					"assay type": [
+						"single_cell"
+					]
+				}
+			},
 			"name": "single_cell",
 			"rules": [
 			]
 		},
 		{
-      "condition": {
-        "attribute_value_match": {
-          "assay type": [
-            "RNA"
-          ]
-        }
-      },
+			"condition": {
+				"attribute_value_match": {
+					"assay type": [
+						"RNA"
+					]
+				}
+			},
 			"name": "RNA",
 			"rules": [
 			]
