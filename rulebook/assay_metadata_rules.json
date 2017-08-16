@@ -128,63 +128,79 @@
 					],
 					"machine type": [
 
+					],
+					"paired ends": [
+						"yes"
 					]
 				}
 			},
-			"name": "lanes",
+			"name": "paired end seq",
 			"rules": [
 				{
-					"condition": {
-						"attribute_value_match": {
-							"paired ends": [
-								"yes"
-							]
-						}
-					},
 					"mandatory": "mandatory",
 					"name": "read1",
 					"description": "Read _1 in a paired end sequencing assay",
 					"type": "file name"
 				},
 				{
-					"condition": {
-						"attribute_value_match": {
-							"paired ends": [
-								"yes"
-							]
-						}
-					},
 					"mandatory": "mandatory",
 					"name": "read2",
 					"description": "Read _2 in a paired end sequencing assay",
 					"type": "file name"
 				},
 				{
-					"condition": {
-						"attribute_value_match": {
-							"paired ends": [
-								"index1_reads2"
-							]
-						}
-					},
+					"mandatory": "not allowed",
+					"name": "index",
+					"description": "File containing index reads in an index and read pair"	
+				},
+				{
+					"mandatory": "not allowed",
+					"name": "reads",
+					"description": "File containing reads in an index and read pair"
+				}
+			]
+		},
+		{
+			"condition": {
+				"attribute_value_match": {
+					"assay type": [
+						"seq"
+					],
+					"machine type": [
+
+					],
+					"paired ends": [
+						"index1_reads2"
+					]
+				}
+			},
+			"name": "index1_reads2 seq",
+			"rules": [
+				{
 					"mandatory": "mandatory",
 					"name": "index",
 					"description": "File containing index reads in an index and read pair",
 					"type": "file name"
 				},
 				{
-					"condition": {
-						"attribute_value_match": {
-							"paired ends": [
-								"index1_reads2"
-							]
-						}
-					},
 					"mandatory": "mandatory",
 					"name": "reads",
 					"description": "File containing reads in an index and read pair",
 					"type": "file name"
 				},
+				{
+					"mandatory": "not allowed",
+					"name": "read1",
+					"description": "Read _1 in a paired end sequencing assay",
+				},
+				{
+					"mandatory": "not allowed",
+					"name": "read2",
+					"description": "Read _2 in a paired end sequencing assay",
+				}
+			]
+		}
+			
 				{
 					"mandatory": "mandatory",
 					"name": "lane ID",
