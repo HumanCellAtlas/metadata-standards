@@ -271,7 +271,7 @@
 					]
 				}
 			]
-		}
+		},
 		{
 			"condition": {
 				"attribute_value_match": {
