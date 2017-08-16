@@ -269,8 +269,26 @@
 							"allow_descendants": false
 						}
 					]
-				},
+				}
+			]
+		}
+		{
+			"condition": {
+				"attribute_value_match": {
+					"assay type": [
+						"single_cell"
+					],
+					"assay type": [
+						"not yet defined in metadata but cases where method versions are obligatory..."
+					]
+				}
+			},
+			"name": "method version",
+			"rules": [
 				{
+					"mandatory": "mandatory",
+					"name": "method_version",
+					"type": "text"
 				}
 			]
 		},
