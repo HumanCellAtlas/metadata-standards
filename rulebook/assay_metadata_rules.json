@@ -185,7 +185,7 @@
 					"condition": {
 						"attribute_value_match": {
 							"paired ends": [
-								"yes"
+								"index1_reads2"
 							],
 							"index": [
 								true
