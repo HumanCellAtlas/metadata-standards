@@ -225,7 +225,7 @@
 				"attribute_value_match": {
 					"assay type": [
 						"single_cell"
-					]
+					],
 					"assay type": [
 						"not yet defined in metadata but cases where barcodes are obligatory..."
 					]
