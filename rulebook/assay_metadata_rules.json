@@ -21,7 +21,6 @@
 					"valid_values": [
 						"seq",
 						"single_cell",
-						"lane",
 						"RNA",
 						"imaging"
 					]
@@ -54,7 +53,7 @@
 				{
 					"mandatory": "recommended",
 					"name": "machine type",
-					"description": "Type of sequencing machine",
+					"description": "Type of sequencing machine i.e. HiSeq 4000",
 					"type": "ontology_text",
 					"valid_terms": [
 						{
@@ -199,8 +198,20 @@
 					"description": "Read _2 in a paired end sequencing assay",
 				}
 			]
-		}
-			
+		},
+		{
+			"condition": {
+				"attribute_value_match": {
+					"assay type": [
+						"seq"
+					],
+					"machine type": {
+
+					]
+				}
+			},
+			"name": "lanes",
+			"rules": [
 				{
 					"mandatory": "mandatory",
 					"name": "lane ID",
@@ -215,10 +226,52 @@
 					"assay type": [
 						"single_cell"
 					]
+					"assay type": [
+						"not yet defined in metadata but cases where barcodes are obligatory..."
+					]
 				}
 			},
-			"name": "single_cell",
+			"name": "single cell with barcodes",
 			"rules": [
+				{
+					"mandatory": "mandatory",
+					"name": "cell barcode offset",
+					"description": "Offset in sequence of cell identifying barcode - 0 for beginning of sequence",
+					"type": "positive integer"
+				},
+				{
+					"mandatory": "mandatory",
+					"name": "cell barcode size",
+					"description": "Size of cell identifying barcode. 0 for no barcode",
+					"type": "positive integer"
+				}
+			]
+		},
+		{
+			"condition": {
+				"attribute_value_match": {
+					"assay type": [
+						"single_cell"
+					]
+				}
+			}
+			"name": "single cell",
+			"rules": [
+				{
+					"mandatory": "mandatory",
+					"name": "method",
+					"description": "How cells are separated.  FACS, drop-seq, tenX, Fluidigm C1, etc",
+					"type": "ontology_text",
+					"valid_terms": [
+						{
+							"ontology_name": "",
+							"term_iri": "",
+							"allow_descendants": false
+						}
+					]
+				},
+				{
+				}
 			]
 		},
 		{
