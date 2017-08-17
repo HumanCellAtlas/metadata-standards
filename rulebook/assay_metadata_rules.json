@@ -86,6 +86,20 @@
 							"allow_descendants": false
 						}
 					]
+				},
+				{
+					"mandatory": "optional",
+					"name": "INSDC experiment",
+					"description": "INSDC experiment accession",
+					"type": "external ID",
+					"require": "INSDC run"
+				}
+				{
+					"mandatory": "optional",
+					"name": "INSDC run",
+					"description": "INSDC run accession",
+					"type": "external ID",
+					"require": "INSDC experiment"
 				}
 			]
 		},
@@ -302,7 +316,128 @@
 			},
 			"name": "RNA",
 			"rules": [
+				{
+					"mandatory": "optional",
+					"name": "RNA prep",
+					"description": "RNA preparation kit",
+					"type": "ontology_text",
+					"valid_terms": [
+					{
+						"ontology_name": "",
+						"term_iri": "",
+						"allow_descendants": false
+					}
+				},
+				{
+					"mandatory": "recommended",
+					"name": "RNA primer",
+					"description": "Primer for cDNA synthesis from RNA",
+					"type": "ontology_text",
+					"valid_terms": [
+					{ 
+						"ontology_name": "",
+						"term_iri": "",
+						"allow_descendants": false
+					}
+				},
+				{
+					"mandatory": "optional",
+					"name": "RNA spike in",
+					"description": "Name of RNA spike in kit",
+					"type": "ontology_text",
+					"valid_terms": [
+					{ 
+						"ontology_name": "",
+						"term_iri": "",
+						"allow_descendants": false
+					},
+					"require": "RNA spike in dilution"
+				},
+				{
+					"mandatory": "optional",
+					"name": "RNA spike in dilution",
+					"description": "Dilution of RNA spike in",
+					"type": "number",
+					"require": "RNA spike in"
+				},
+				{
+					"mandatory": "optional",
+					"name": "RNA strand",
+					"description": "Single stranded?",
+					"type": "ontology_text",
+					"valid_terms": [
+					{ 
+						"ontology_name": "",
+						"term_iri": "",
+						"allow_descendants": false
+					},
+				},
+				{
+					"mandatory": "recommended",
+					"name": "Array Express assay name",
+					"description": "Array express assay identifier.  Example:  HP1525301T2D_P24",
+					"type": "external ID"
+				}
 			]
-		}		
+		}
+		{
+			"condition": {
+				"attribute_value_match": [
+					"assay type": [
+						"imaging"
+					]
+			},
+			"name": "imaging",
+			"rules": [
+				{
+					"mandatory": "Recommended",
+					"name": "imaging embedding",
+					"description": "Description of embedding conditions",
+					"type": "text"
+				},
+				{
+					"mandatory": "Optional",
+					"name": "imaging exposure time",
+					"description": "Exposure time as a floating point number in units of seconds",
+					"type": "number"
+				},
+				{
+					"mandatory": "mandatory",
+					"name": "imaging field counts",
+					"description": "number of fields in x and y dimensions",
+					"type": "array of positive integers"
+				},
+				{
+					"mandatory": "recommended",
+					"name": "imaging field microns",
+					"description": "microns covered by a field in x,y, and z.  Z includes all focal planes in a single file",
+					"type": "array of positive integers"
+				},
+				{
+					"mandatory": "mandatory",
+					"name": "imaging field resolution",
+					"description": "x, y, and z (number of focal planes) resolution of an individual field",
+					"type": "array of positive integers"
+				},
+				{
+					"mandatory": "recommended",
+					"name": "imaging fixation",
+					"description": "Description of fixation conditions",
+					"type": "text"
+				},
+				{
+					"mandatory": "recommended",
+					"name": "imaging microscope",
+					"description": "Microscope used for imaging",
+					"type": "ontology_text",
+					"valid_terms": [
+					{ 
+						"ontology_name": "",
+						"term_iri": "",
+						"allow_descendants": false
+					}
+				}
+			]
+		}
 	]
 }
