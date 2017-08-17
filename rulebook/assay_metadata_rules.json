@@ -322,11 +322,12 @@
 					"description": "RNA preparation kit",
 					"type": "ontology_text",
 					"valid_terms": [
-					{
-						"ontology_name": "",
-						"term_iri": "",
-						"allow_descendants": false
-					}
+						{
+							"ontology_name": "",
+							"term_iri": "",
+							"allow_descendants": false
+						}
+					]
 				},
 				{
 					"mandatory": "recommended",
@@ -334,11 +335,12 @@
 					"description": "Primer for cDNA synthesis from RNA",
 					"type": "ontology_text",
 					"valid_terms": [
-					{ 
-						"ontology_name": "",
-						"term_iri": "",
-						"allow_descendants": false
-					}
+						{
+							"ontology_name": "",
+							"term_iri": "",
+							"allow_descendants": false
+						}
+					]
 				},
 				{
 					"mandatory": "optional",
@@ -346,11 +348,12 @@
 					"description": "Name of RNA spike in kit",
 					"type": "ontology_text",
 					"valid_terms": [
-					{ 
-						"ontology_name": "",
-						"term_iri": "",
-						"allow_descendants": false
-					},
+						{
+							"ontology_name": "",
+							"term_iri": "",
+							"allow_descendants": false
+						}
+					]
 					"require": "RNA spike in dilution"
 				},
 				{
@@ -366,11 +369,12 @@
 					"description": "Single stranded?",
 					"type": "ontology_text",
 					"valid_terms": [
-					{ 
-						"ontology_name": "",
-						"term_iri": "",
-						"allow_descendants": false
-					},
+						{ 
+							"ontology_name": "",
+							"term_iri": "",
+							"allow_descendants": false
+						},
+					]
 				},
 				{
 					"mandatory": "recommended",
@@ -431,11 +435,12 @@
 					"description": "Microscope used for imaging",
 					"type": "ontology_text",
 					"valid_terms": [
-					{ 
-						"ontology_name": "",
-						"term_iri": "",
-						"allow_descendants": false
-					}
+						{ 
+							"ontology_name": "",
+							"term_iri": "",
+							"allow_descendants": false
+						}
+					]
 				}
 			]
 		}
