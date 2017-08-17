@@ -93,7 +93,7 @@
 					"description": "INSDC experiment accession",
 					"type": "external ID",
 					"require": "INSDC run"
-				}
+				},
 				{
 					"mandatory": "optional",
 					"name": "INSDC run",
@@ -353,7 +353,7 @@
 							"term_iri": "",
 							"allow_descendants": false
 						}
-					]
+					],
 					"require": "RNA spike in dilution"
 				},
 				{
@@ -383,7 +383,7 @@
 					"type": "external ID"
 				}
 			]
-		}
+		},
 		{
 			"condition": {
 				"attribute_value_match": [
