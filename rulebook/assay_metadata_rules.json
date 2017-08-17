@@ -390,6 +390,7 @@
 					"assay type": [
 						"imaging"
 					]
+				]
 			},
 			"name": "imaging",
 			"rules": [
