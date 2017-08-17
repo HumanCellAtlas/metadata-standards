@@ -386,11 +386,11 @@
 		},
 		{
 			"condition": {
-				"attribute_value_match": [
+				"attribute_value_match": {
 					"assay type": [
 						"imaging"
 					]
-				]
+				}
 			},
 			"name": "imaging",
 			"rules": [
