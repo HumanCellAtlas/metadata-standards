@@ -1,0 +1,146 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "additionalProperties": false, 
+    "definitions": {
+        "lanes": {
+            "items": {
+                "additionalProperties": false, 
+                "properties": {
+                    "index": {
+                        "description": "Fastq file containing barcodes only in assay such as 10x that produces these.", 
+                        "type": "string"
+                    }, 
+                    "number": {
+                        "description": "Which lane number", 
+			"type": "number"
+                    }, 
+                    "read1": {
+                        "description": "First read in paired read sequencing assay", 
+                        "type": "string"
+                    }, 
+                    "read2": {
+                        "description": "Second read in paired read assay", 
+                        "type": "string"
+                    }, 
+                    "reads": {
+                        "description": "Reads in assay where only single fastq file used for alignment", 
+                        "type": "string"
+                    }
+                }, 
+                "type": "object"
+            }, 
+            "type": "array"
+        }
+    }, 
+    "description": "Information about how a sample was sequenced.", 
+    "properties": {
+        "core": {
+            "$ref": "http://hgwdev.soe.ucsc.edu/~kent/hca/schema/core.json"
+        }, 
+        "ena_experiment": {
+            "description": "European Nucleotide Archive experiment accession", 
+            "pattern": "^ERX.*$", 
+            "type": "string"
+        }, 
+        "ena_run": {
+            "description": "European Nucleotide Archive run accession", 
+            "pattern": "^ERR.*$", 
+            "type": "string"
+        }, 
+        "instrument_model": {
+            "description": "Examples: HiSeq 200, Pac Bio SEQuel", 
+            "enum": [
+                "Illumina HiSeq 2000", 
+                "Illumina HiSeq 2500", 
+                "Illumina HiSeq 4000", 
+                "Illumina MiSeq", 
+                "Illumina NextSeq 500"
+            ]
+        }, 
+        "instrument_platform": {
+            "description": "Examples: Illumina, Ion Torrent, Pac Bio", 
+            "enum": [
+                "Illumina"
+            ]
+        }, 
+        "lanes": {
+            "$ref": "#/definitions/lanes"
+        }, 
+        "library_construction": {
+            "description": "How dna sequencing library was prepared from sample or rna library.  Examples: \"Nextera XT\" \"TrueSeq\"", 
+            "enum": [
+                "Nextera XT", 
+                "TruSeq", 
+                "modified Nextera XT"
+            ]
+        }, 
+        "library_protocol": {
+            "description": "DNA sequencing library preparation protocol", 
+            "pattern": "^P-....-.*$", 
+            "type": "string"
+        }, 
+        "local_machine_name": {
+            "description": "Local lab name for particular machine of given platform and model this was run on.", 
+            "type": "string"
+        }, 
+        "molecule": {
+            "description": "RNA, DNA, or protein, or more specifically \"total RNA,\" \"genomic DNA,\"  etc.", 
+            "enum": [
+                "RNA", 
+                "polyA RNA", 
+                "total RNA"
+            ]
+        }, 
+        "paired_ends": {
+            "description": "Is a paired end sequencing strategy used? Values are yes/no/index1_reads2 (for 10x and drop-seq)", 
+            "enum": [
+                "index1_reads2", 
+                "no", 
+                "yes"
+            ]
+        }, 
+        "sra_experiment": {
+            "description": "NCBI Short Read Archive experiment accession (SRX)", 
+            "pattern": "^SRX.*$", 
+            "type": "string"
+        }, 
+        "sra_run": {
+            "description": "NCBI Short Read Archive run accession (SRR)", 
+            "items": {
+                "pattern": "^SRR.*$", 
+                "type": "string"
+            }, 
+            "type": "array"
+        }, 
+        "umi_barcode_offset": {
+            "description": "Offset in sequence of unique molecular identifier (UMI) barcode. 0 for beginning of sequence", 
+            "maximum": 50, 
+            "minimum": 0, 
+            "type": "integer"
+        }, 
+        "umi_barcode_read": {
+            "description": "Which read UMI is found on.  Is either \"read1,\" \"read2,\" \"reads\" or \"index\" or some TBD field of seq.lane.", 
+            "enum": [
+                "read1", 
+                "read2", 
+                "index"
+            ]
+        }, 
+        "umi_barcode_size": {
+            "description": "Size  of UMI barcode. 0 for no barcode", 
+            "maximum": 50, 
+            "minimum": 0, 
+            "type": "integer"
+        }
+    }, 
+    "required": [
+	"core",
+	"instrument_model",
+	"instrument_platform",
+	"lanes",
+        "molecule", 
+        "paired_ends"
+    ], 
+    "title": "seq", 
+    "type": "object"
+}

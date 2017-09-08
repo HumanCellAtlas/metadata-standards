@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "additionalProperties": false, 
+    "definitions": {}, 
+    "description": "Contains information on single cell aspects of an assay.", 
+    "properties": {
+        "barcode_offset": {
+            "description": "Offset in sequence of cell identifying barcode. 0 for beginning of sequence", 
+            "maximum": 50, 
+            "minimum": 0, 
+            "type": "integer"
+        }, 
+        "barcode_read": {
+            "description": "Which read UMI is found on.  Is either \"read1,\" \"read2,\" \"reads\" or \"index\" or some TBD field of seq.lane.", 
+            "enum": [
+                "read1", 
+                "read2", 
+                "index"
+            ]
+        }, 
+        "barcode_size": {
+            "description": "Size of cell identifying barcode. 0 for no barcode", 
+            "maximum": 50, 
+            "minimum": 0, 
+            "type": "integer"
+        }, 
+        "cell_handling": {
+            "description": "How cells are separated.  FACS, drop-seq, tenX_v2, Fluidigm C1, etc", 
+            "enum": [
+                "10x_v2", 
+                "FACS", 
+                "Fluidigm C1", 
+                "drop-seq", 
+                "inDrop", 
+                "mouth pipette", 
+                "bulk"
+            ]
+        }, 
+        "core": {
+            "$ref": "http://hgwdev.soe.ucsc.edu/~kent/hca/schema/core.json"
+        }
+    }, 
+    "required": [
+        "cell_handling",
+	"core"
+    ], 
+    "title": "single_cell", 
+    "type": "object"
+}
