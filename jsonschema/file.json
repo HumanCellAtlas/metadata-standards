@@ -18,6 +18,7 @@
                 "hca-project-json",
                 "hca-protocol-json",
                 "hca-submission-json"
+                "hca-data-file"
             ]
         }
         },
