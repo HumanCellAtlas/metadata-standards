@@ -2,15 +2,24 @@
     "$schema": "http://json-schema.org/draft-04/schema#", 
     "additionalProperties": false, 
     "definitions": {}, 
-    "description": "donor schema generate by tagSchemaToJson from donor", 
+    "description": "Metadata describing a file in a bundle", 
     "properties": {
         "name" : {
             "description" : "Name of the file",
-            "type" : "string"	
-	},
+            "type" : "string"    
+    },
         "content_type" :{
             "description" : "type of file e.g hca-sample-json, hca-assay-json, hca-rnaseq-fastq-gz",
-            "type" : "string"
+            "type" : "string",
+            "enum" : [
+                "hca-sample-json",
+                "hca-assay-json",
+                "hca-analysis-json",
+                "hca-project-json",
+                "hca-protocol-json",
+                "hca-submission-json"
+            ]
+        }
         },
         "size" : {
             "description" : "Length of file in bytes",
@@ -21,6 +30,7 @@
             "type" : "string"
         },
         "checksums" : {
+        "description" : "Checksums computed on the referenced file",
             "type" : "object",
             "properties" : {
                 "s3etag" : {
