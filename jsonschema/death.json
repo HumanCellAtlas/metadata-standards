@@ -16,6 +16,7 @@
             ]
         }, 
         "core": {
+	    "description": "type and schema for this object",
             "$ref": "http://hgwdev.soe.ucsc.edu/~kent/hca/schema/core.json"
         }, 
         "days_on_ventilator": {

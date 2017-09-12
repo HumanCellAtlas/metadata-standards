@@ -27,7 +27,7 @@
                 "modified smart-seq2", 
                 "smart-seq2",
 		"QUARTZ-Seq",
-		"10XV2",
+                "10x_v2", 
 		"drop-seq",
 		"inDrop"
             ]

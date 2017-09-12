@@ -6,22 +6,22 @@
             "items": {
                 "additionalProperties": false, 
                 "properties": {
-                    "index": {
-                        "description": "Fastq file containing barcodes only in assay such as 10x that produces these.", 
-                        "type": "string"
-                    }, 
                     "number": {
                         "description": "Which lane number", 
 			"type": "number"
                     }, 
-                    "read1": {
-                        "description": "First read in paired read sequencing assay", 
+                    "r1": {
+                        "description": "File name of first read in paired read sequencing assay, or only read for unpaired", 
                         "type": "string"
                     }, 
-                    "read2": {
-                        "description": "Second read in paired read assay", 
+                    "r2": {
+                        "description": "File name of second read in paired read assay", 
                         "type": "string"
                     }, 
+		    "i1": {
+		        "description": "In 10x assays file name where the sample barcode (as opposed to cell barcode) is kept.",
+			"type": "string"
+		    },
                     "reads": {
                         "description": "Reads in assay where only single fastq file used for alignment", 
                         "type": "string"
@@ -92,9 +92,8 @@
             ]
         }, 
         "paired_ends": {
-            "description": "Is a paired end sequencing strategy used? Values are yes/no/index1_reads2 (for 10x and drop-seq)", 
+            "description": "Is a paired end sequencing strategy used? Values are yes/no", 
             "enum": [
-                "index1_reads2", 
                 "no", 
                 "yes"
             ]
@@ -112,25 +111,9 @@
             }, 
             "type": "array"
         }, 
-        "umi_barcode_offset": {
-            "description": "Offset in sequence of unique molecular identifier (UMI) barcode. 0 for beginning of sequence", 
-            "maximum": 50, 
-            "minimum": 0, 
-            "type": "integer"
-        }, 
-        "umi_barcode_read": {
-            "description": "Which read UMI is found on.  Is either \"read1,\" \"read2,\" \"reads\" or \"index\" or some TBD field of seq.lane.", 
-            "enum": [
-                "read1", 
-                "read2", 
-                "index"
-            ]
-        }, 
-        "umi_barcode_size": {
-            "description": "Size  of UMI barcode. 0 for no barcode", 
-            "maximum": 50, 
-            "minimum": 0, 
-            "type": "integer"
+        "umi_barcode": {
+            "description": "Information about unique molecular identifier barcode", 
+            "$ref": "http://hgwdev.soe.ucsc.edu/~kent/hca/schema/barcode.json"
         }
     }, 
     "required": [

@@ -71,7 +71,7 @@
         }, 
         "publications": {
             "items": {
-                "$ref": "http://hgwdev.soe.ucsc.edu/~kent/hca/schema/publications.json", 
+                "$ref": "http://hgwdev.soe.ucsc.edu/~kent/hca/schema/publication.json", 
                 "description": "An array of publication modules."
             }, 
             "type": "array"
