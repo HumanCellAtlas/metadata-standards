@@ -21,14 +21,15 @@
 		    "i1": {
 		        "description": "In 10x assays file name where the sample barcode (as opposed to cell barcode) is kept.",
 			"type": "string"
-		    },
-                    "reads": {
-                        "description": "Reads in assay where only single fastq file used for alignment", 
-                        "type": "string"
-                    }
+		    }
                 }, 
+		"required": [
+		    "r1"
+		],
+		"title": "a sequencing lane", 
                 "type": "object"
             }, 
+	    "title": "lane array", 
             "type": "array"
         }
     }, 
