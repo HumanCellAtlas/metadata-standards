@@ -19,7 +19,11 @@
                         "type": "string"
                     }, 
 		    "i1": {
-		        "description": "In 10x assays file name where the sample barcode (as opposed to cell barcode) is kept.",
+		        "description": "A barcode index file.  Often index off of first read",
+			"type": "string"
+		    },
+		    "i2": {
+		        "description": "A barcode index file.  Often index off of second read",
 			"type": "string"
 		    }
                 }, 
