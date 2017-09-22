@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "additionalProperties": false,
+    "properties" : {
+        "transfer_service_version" : {
+            "description" : "Version of the ingestion servive's transfer agent that was used in persisting this bundle",
+            "type" : "string"
+        },
+        "submitted_files" : {
+            "description" : "Metadata describing the files in the bundle",
+            "type" : "array",
+            "items" : {
+                "$ref" : "https://raw.githubusercontent.com/HumanCellAtlas/metadata-standards/submission_json/jsonschema/file.json"    
+            }
+        }
+    },
+    "required" : [
+        "transfer_service_version",
+        "submitted_files"
+    ],
+    "title" : "submission",
+    "type" : "object"
+}
